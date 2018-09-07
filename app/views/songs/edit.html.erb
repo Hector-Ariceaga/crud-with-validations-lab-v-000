@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= label_tag "released", "Released?(True or False)" %>
-    <%= text_field_tag "song[released]", @song.released %>
+    <%= check_box "song[released]", @song.released %>
   </div>
 
   <div class="field">
