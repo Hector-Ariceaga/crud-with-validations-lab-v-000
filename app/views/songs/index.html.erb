@@ -18,9 +18,11 @@
         <td><%= song.released %></td>
         <td><%= song.release_year %></td>
         <td><%= song.genre %></td>
-        <td><%= link_to "View", song %></td>
-        <td><%= link_to "Edit", edit_song_path(song)%></td>
-        <td><%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %></td>
+        <td>
+          <%= link_to "View", song %>
+          <%= link_to "Edit", edit_song_path(song)%>
+          <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
