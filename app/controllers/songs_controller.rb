@@ -3,6 +3,19 @@ class SongsController < ApplicationController
     @songs = Song.all
   end
 
+  def new
+    @song = Song.new
+  end
+
+  def create
+    @song = Song.new(song_params)
+    if @song.save
+      redirect_to @song
+    else
+      render :new
+    end
+  end
+
   def show
     @song = Song.find(params[:id])
   end
@@ -18,19 +31,6 @@ class SongsController < ApplicationController
       redirect_to @song
     else
       render :edit
-    end
-  end
-
-  def new
-    @song = Song.new
-  end
-
-  def create
-    @song = Song.new(song_params)
-    if @song.save
-      redirect_to @song
-    else
-      render :new
     end
   end
 
